@@ -1,11 +1,16 @@
 version: 0.2
 
 phases:
+  install:
+    commands:
+      - echo "Download allurectl..."
+      - wget https://github.com/allure-framework/allurectl/releases/latest/download/allurectl_linux_amd64 -O ./allurectl
+      - chmod +x ./allurectl
   build:
     commands:
       - mvn package
       - mvn test
-
+      - ALLURE_ENDPOINT=https://custotest.testops.cloud ALLURE_TOKEN=b78d6b10-cc43-4e86-9415-83f99c61c108  ALLURE_PROJECT_ID=1 ./allurectl upload --launch-name "Test launch" ./target/allure-results
 artifacts:
   files:
     - target/*.jar
