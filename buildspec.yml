@@ -1,0 +1,10 @@
+
+phases:
+  build:
+    commands:
+      - mvn package
+      - mvn test
+
+artifacts:
+  files:
+    - target/*.jar
