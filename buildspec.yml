@@ -11,7 +11,7 @@ phases:
       - mvn package
   post_build:
     commands:
-      - ALLURE_ENDPOINT=https://custotest.testops.cloud ALLURE_TOKEN=b78d6b10-cc43-4e86-9415-83f99c61c108 ALLURE_PROJECT_ID=1 ./allurectl upload --launch-name "$LAUNCH_NAME" ./target/allure-results || true
+      - ALLURE_ENDPOINT=https://custotest.testops.cloud ALLURE_TOKEN=b78d6b10-cc43-4e86-9415-83f99c61c108 ALLURE_PROJECT_ID=1 ./allurectl upload --launch-name "$LAUNCH_NAME" ./target/allure-results
 artifacts:
   files:
     - target/*.jar
