@@ -10,7 +10,7 @@ phases:
     commands:
       - mvn package
       - |
-        if [ $CODEBUILD_BUILD_ID = "cusbo-ci-pipeline-stuff-build-api:*" ]; then
+        if [[ $CODEBUILD_BUILD_ID == "cusbo-ci-pipeline-stuff-build-api:*" ]]; then
               export ALLURE_UPLOAD="true"
         fi
   post_build:
