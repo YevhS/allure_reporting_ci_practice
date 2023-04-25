@@ -15,8 +15,10 @@ phases:
               export ALLURE_UPLOAD="true"
         fi
       - echo $ALLURE_UPLOAD
+      - ls ./target
   post_build:
     commands:
+      - ls ./target
       - |
         if [[ $ALLURE_UPLOAD == "true" ]]; then
           echo "Uploading test reports to Allure TestOps"
