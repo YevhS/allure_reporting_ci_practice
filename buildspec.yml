@@ -11,7 +11,7 @@ phases:
       - mvn package
       - echo $CODEBUILD_BUILD_ID == "cusbo-build-project:*"
       - |
-        if [[ $CODEBUILD_BUILD_ID == "cusbo-build-project:*" ]]; then
+        if [[ "$CODEBUILD_BUILD_ID" == "cusbo-build-project:"* ]]; then
               export ALLURE_UPLOAD="true"
         fi
       - echo $ALLURE_UPLOAD
