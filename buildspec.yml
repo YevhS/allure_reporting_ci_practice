@@ -17,7 +17,11 @@ phases:
       - echo $ALLURE_UPLOAD
   post_build:
     commands:
-      - ./allurectl upload --launch-name "$CODEBUILD_RESOLVED_SOURCE_VERSION" ./target/allure-results
+      - |
+        if [[ $ALLURE_UPLOAD == "true" ]]; then
+          echo "Uploading test reports to Allure TestOps"
+          ./allurectl upload --launch-name "$CODEBUILD_RESOLVED_SOURCE_VERSION" ./target/allure-results
+        fi
 artifacts:
   files:
     - target/*.jar
