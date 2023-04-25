@@ -34,7 +34,7 @@ class MyApplicationTests {
     void testAddition() {
         int result = calculator.add(2, 3);
         Allure.addAttachment("Result", Integer.toString(result));
-        assertEquals(6, result);
+        assertEquals(5, result);
     }
 
     @Test

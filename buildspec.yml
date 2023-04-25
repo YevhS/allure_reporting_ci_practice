@@ -16,7 +16,7 @@ phases:
   post_build:
     commands:
       - |
-        if [ $ALLURE_UPLOAD = "true" ]; then
+        if [[ $ALLURE_UPLOAD == "true" ]]; then
           echo "Uploading test reports to Allure TestOps"
           ./allurectl upload --launch-name "$CODEBUILD_RESOLVED_SOURCE_VERSION" ./target/allure-results
         fi
