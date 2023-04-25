@@ -13,10 +13,10 @@ phases:
         if [[ $CODEBUILD_BUILD_ID == "cusbo-build-project:*" ]]; then
               export ALLURE_UPLOAD="true"
         fi
+        - echo $ALLURE_UPLOAD
   post_build:
     commands:
       - ./allurectl upload --launch-name "$CODEBUILD_RESOLVED_SOURCE_VERSION" ./target/allure-results
-      - echo $CODEBUILD_BUILD_ID
 artifacts:
   files:
     - target/*.jar
