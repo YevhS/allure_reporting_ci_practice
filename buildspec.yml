@@ -11,6 +11,7 @@ phases:
       - mvn package
   post_build:
     commands:
+      - chmod +x ./upload_test_results.sh
       - bash ./upload_test_results.sh
 artifacts:
   files:
