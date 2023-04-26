@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Check if we should upload to Allure TestOps based on the build ID
-if bash -c '[[ "$CODEBUILD_BUILD_ID" = "cusbo-ci-pipeline-stuff-build-api:"* ]]'; then
+if bash -c '[[ "$CODEBUILD_BUILD_ID" = "cusbo-build-project:"* ]]'; then
   export ALLURE_UPLOAD="true"
 fi
 
