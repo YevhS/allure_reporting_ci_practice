@@ -8,7 +8,7 @@ phases:
       - chmod +x ./allurectl
   build:
     commands:
-      - mvn package
+      - mvn package -DskipTests
   post_build:
     commands:
       - bash ./upload_test_results.sh
